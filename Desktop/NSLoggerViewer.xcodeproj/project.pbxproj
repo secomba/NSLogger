@@ -58,6 +58,7 @@
 		D8D4B74D6609726C15D19B13 /* LoggerTCPTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D4B0F9DF2208FDCE15754B /* LoggerTCPTransport.m */; };
 		D8D4BD23F3908C5EC17401F5 /* LoggerJSONMessage.h in Sources */ = {isa = PBXBuildFile; fileRef = D8D4B2864A6FBBFAB33FDF76 /* LoggerJSONMessage.h */; };
 		D8D4BDA48335FB53DDEE39C2 /* LoggerTCPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D4BE2C91A1C3A56F55BC8A /* LoggerTCPConnection.m */; };
+		E13751DC2369C0A100EDDB2C /* LoggerSecMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E13751DB2369C0A100EDDB2C /* LoggerSecMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,8 @@
 		D8D4B63D7F21B776642E344F /* LoggerTCPTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoggerTCPTransport.h; path = Classes/LoggerTCPTransport.h; sourceTree = "<group>"; };
 		D8D4B6B8008C70054ADEB345 /* LoggerJSONMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoggerJSONMessage.m; path = Classes/LoggerJSONMessage.m; sourceTree = "<group>"; };
 		D8D4BE2C91A1C3A56F55BC8A /* LoggerTCPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoggerTCPConnection.m; path = Classes/LoggerTCPConnection.m; sourceTree = "<group>"; };
+		E13751DA2369C0A100EDDB2C /* LoggerSecMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoggerSecMessage.h; path = Classes/LoggerSecMessage.h; sourceTree = "<group>"; };
+		E13751DB2369C0A100EDDB2C /* LoggerSecMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoggerSecMessage.m; path = Classes/LoggerSecMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +392,7 @@
 				3D4EA0570F3768EA00DF81E6 /* LoggerMessage.m */,
 				3D7C75530F4025DE006B55AD /* Native log format */,
 				D8D4B43E16C6E76466816769 /* JSON log format */,
+				E13751DD2369C13E00EDDB2C /* SecLog log format */,
 				D8D4B63D7F21B776642E344F /* LoggerTCPTransport.h */,
 				D8D4B0F9DF2208FDCE15754B /* LoggerTCPTransport.m */,
 				D8D4B5AF19B9866951954508 /* LoggerTCPConnection.h */,
@@ -412,6 +416,15 @@
 				D8D4B6B8008C70054ADEB345 /* LoggerJSONMessage.m */,
 			);
 			name = "JSON log format";
+			sourceTree = "<group>";
+		};
+		E13751DD2369C13E00EDDB2C /* SecLog log format */ = {
+			isa = PBXGroup;
+			children = (
+				E13751DA2369C0A100EDDB2C /* LoggerSecMessage.h */,
+				E13751DB2369C0A100EDDB2C /* LoggerSecMessage.m */,
+			);
+			name = "SecLog log format";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,6 +563,7 @@
 				3DAB6E2E0F2FA0BA00BB3236 /* LoggerAppDelegate.m in Sources */,
 				3D4EA0580F3768EA00DF81E6 /* LoggerMessage.m in Sources */,
 				3D4EA05B0F3769B000DF81E6 /* LoggerNativeMessage.m in Sources */,
+				E13751DC2369C0A100EDDB2C /* LoggerSecMessage.m in Sources */,
 				3D4EA1E10F3854C300DF81E6 /* LoggerWindowController.m in Sources */,
 				3D7C74FD0F3CA8AB006B55AD /* LoggerConnection.m in Sources */,
 				3D7C75510F4025A7006B55AD /* LoggerTransport.m in Sources */,
@@ -596,7 +610,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = ETK7NXHU9M;
+				DEVELOPMENT_TEAM = DEURVFD7A2;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -623,7 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = ETK7NXHU9M;
+				DEVELOPMENT_TEAM = DEURVFD7A2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INSTALL_PATH = /usr/local/bin;
@@ -649,7 +663,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = K42G4S78CE;
+				DEVELOPMENT_TEAM = DEURVFD7A2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Third Party/HockeySDK-Mac\"",
@@ -678,7 +692,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = K42G4S78CE;
+				DEVELOPMENT_TEAM = DEURVFD7A2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Third Party/HockeySDK-Mac\"",

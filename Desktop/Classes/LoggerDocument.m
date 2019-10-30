@@ -36,6 +36,7 @@
 #import "LoggerNativeMessage.h"
 #import "LoggerAppDelegate.h"
 #import "LoggerTCPConnection.h"
+#import "LoggerSecMessage.h"
 
 @implementation LoggerDocument
 
@@ -322,7 +323,22 @@
         }
 		if ([msgs count])
 			[connection messagesReceived:msgs];
-	}
+	} else if ([typeName isEqualToString:@"SecLog Format"]) {
+       LoggerConnection *connection = [[LoggerConnection alloc] init];
+       [self.attachedLogs addObject:connection];
+
+       NSMutableArray *msgs = [[NSMutableArray alloc] init];
+       
+       NSString *dataAsString = [NSString stringWithUTF8String:[data bytes]];
+       NSArray *logLines = [[[dataAsString stringByReplacingOccurrencesOfString:@"\r" withString:@"\n"] stringByReplacingOccurrencesOfString:@"\n\n" withString:@"\n"] componentsSeparatedByString:@"\n"];
+
+       for (NSString *logLine in logLines) {
+           LoggerSecMessage *msg = [[LoggerSecMessage alloc] initWithData:[logLine dataUsingEncoding:NSUTF8StringEncoding] connection:connection];
+           [msgs addObject:msg];
+       }
+       if ([msgs count])
+           [connection messagesReceived:msgs];
+    }
 	self.currentConnection = [self.attachedLogs lastObject];
 	return ([self.attachedLogs count] != previousLogs);
 }

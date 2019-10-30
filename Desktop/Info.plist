@@ -70,6 +70,30 @@
 			<key>NSPersistentStoreTypeKey</key>
 			<string>InMemory</string>
 		</dict>
+        <dict>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>seclog</string>
+            </array>
+            <key>CFBundleTypeIconFile</key>
+            <string>rawlogfile.icns</string>
+            <key>CFBundleTypeName</key>
+            <string>SecLog Format</string>
+            <key>CFBundleTypeRole</key>
+            <string>Viewer</string>
+            <key>LSHandlerRank</key>
+            <string>Owner</string>
+            <key>LSTypeIsPackage</key>
+            <false/>
+            <key>NSDocumentClass</key>
+            <string>LoggerDocument</string>
+            <key>NSExportableTypes</key>
+            <array>
+                <string>public.plain-text</string>
+            </array>
+            <key>NSPersistentStoreTypeKey</key>
+            <string>Binary</string>
+        </dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
